@@ -17,7 +17,7 @@ export default class extends Component {
   };
 
   static defaultProps = {
-    value: '有新版本更新啦，点击刷新',
+    value: '↺ 有新版本更新啦，点击刷新',
     hasUpdate: false
   };
   /*===properties end===*/

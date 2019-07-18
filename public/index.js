@@ -6,7 +6,7 @@ import './assets/style.scss';
 
 class App extends React.Component {
   state = {
-    hasUpdate: false
+    hasUpdate: true
   };
 
   componentDidMount() {
