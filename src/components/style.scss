@@ -1,0 +1,23 @@
+$react-sw-update-tips-options: () !default;
+
+.react-sw-update-tips {
+  background: #007aff;
+  position: fixed;
+  box-sizing: border-box;
+  font-size: 12px;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 0 10px;
+  z-index: 1000;
+  height: 32px;
+  line-height: 32px;
+  &,
+  a {
+    color: #fff;
+  }
+
+  a {
+    cursor: pointer;
+  }
+}
