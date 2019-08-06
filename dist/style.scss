@@ -12,6 +12,14 @@ $react-sw-update-tips-options: () !default;
   z-index: 1000;
   height: 32px;
   line-height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &[hidden] {
+    display: none;
+  }
+
   &,
   a {
     color: #fff;
