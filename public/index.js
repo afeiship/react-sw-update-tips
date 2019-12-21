@@ -1,7 +1,7 @@
 import ReactSwUpdateTips from '../src/main';
 import ReactDOM from 'react-dom';
 import React from 'react';
-import NxOfflineSw from 'next-offline-sw';
+import NxOfflineSw from '@feizheng/next-offline-sw';
 import './assets/style.scss';
 
 class App extends React.Component {

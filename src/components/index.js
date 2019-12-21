@@ -2,14 +2,13 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import noop from 'noop';
-import NxOfflineSw from 'next-offline-sw';
+import noop from '@feizheng/noop';
+import NxOfflineSw from '@feizheng/next-offline-sw';
 import objectAssign from 'object-assign';
 
 const CLASS_NAME = 'react-sw-update-tips';
 
 export default class extends Component {
-  /*===properties start===*/
   static propTypes = {
     className: PropTypes.string,
     value: PropTypes.string,
@@ -21,7 +20,6 @@ export default class extends Component {
     hidden: false,
     hasUpdate: false
   };
-  /*===properties end===*/
 
   constructor(inProps) {
     super(inProps);

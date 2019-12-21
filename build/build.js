@@ -7,13 +7,15 @@ import {
   loaders,
   plugins,
   externals
-} from 'webpack-lib-kits';
+} from '@feizheng/webpack-lib-kits';
 
 export default merge(baseConfig, {
   entry: inputs.build(),
-  output: outputs.build(),
-  externals: externals.base({
-    'next-offline-sw': 'next-offline-sw'
+  output: outputs.build({
+    library: 'ReactSwUpdateTips'
   }),
-  plugins: [plugins.clean(), plugins.copyAssets(), plugins.copyStyles()]
+  externals: externals.base({
+    '@feizheng/noop': '@feizheng/noop'
+  }),
+  plugins: [plugins.clean(), plugins.copyStyles()]
 });
