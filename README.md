@@ -6,11 +6,11 @@
 npm install -S @feizheng/react-sw-update-tips
 ```
 ## properties
-| property        | type | description |
-| --------------- | ---- | ----------- |
-| className       | -    | -           |
-| value           | -    | -           |
-| onChange        | -    | -           |
+| property  | type    | description |
+| --------- | ------- | ----------- |
+| className | -       | -           |
+| value     | Boolean | -           |
+| hasUpdate | Boolean | -           |
 
 ## usage
 1. import css
@@ -22,35 +22,42 @@ npm install -S @feizheng/react-sw-update-tips
   ```
 2. import js
   ```js
-  import React from 'react';
+  import ReactSwUpdateTips from '../src/main';
   import ReactDOM from 'react-dom';
-  import ReactSwUpdateTips from '@feizheng/react-sw-update-tips';
-  
-  // your app:
-  class App extends React.Component{
-    render(){
+  import React from 'react';
+  import NxOfflineSw from '@feizheng/next-offline-sw';
+  import './assets/style.scss';
+
+  class App extends React.Component {
+    state = {
+      hasUpdate: true
+    };
+
+    componentDidMount() {
+      this.installSw();
+    }
+
+    installSw() {
+      NxOfflineSw.install({
+        onUpdateReady: function() {
+          nx.$memory = { hasUpdate: true };
+          console.log('SW Event:', 'onUpdateReady');
+        }
+      });
+    }
+
+    render() {
       return (
-        <ReactSwUpdateTips />
-      )
+        <div className="app-container">
+          <ReactSwUpdateTips hasUpdate={this.state.hasUpdate} />
+        </div>
+      );
     }
   }
 
-  // render to dom:
-  ReactDOM.render(<App/>, document.getElementById('app'));
+  ReactDOM.render(<App />, document.getElementById('app'));
+
   ```
 
 ## documentation
 - https://afeiship.github.io/react-sw-update-tips/
-
-## resources
-- https://www.robinwieruch.de/minimal-react-webpack-babel-setup/
-- https://www.valentinog.com/blog/react-webpack-babel/
-- https://jestjs.io/docs/en/tutorial-react#snapshot-testing-with-mocks-enzyme-and-react-16
-- https://testing-library.com/docs/react-testing-library/api
-
-## todos
-- [ ] Add: semver number for every build files.
-- [ ] Add: need output css files.
-- [ ] Add: PWA support for docs.
-- [ ] Add: source.map file for dist(`you can upload for production debug`).
-- [ ] BUG: npm run dev will clean dist.
