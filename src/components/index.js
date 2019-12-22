@@ -11,14 +11,15 @@ const CLASS_NAME = 'react-sw-update-tips';
 export default class extends Component {
   static propTypes = {
     className: PropTypes.string,
-    value: PropTypes.string,
-    hasUpdate: PropTypes.bool
+    text: PropTypes.string,
+    value: PropTypes.bool
   };
 
   static defaultProps = {
-    value: '↺ 有新版本更新啦，点击刷新',
+    text: '↺ 有新版本更新啦，点击刷新',
     hidden: false,
-    hasUpdate: false
+    value: false,
+    onChange: noop
   };
 
   constructor(inProps) {
@@ -28,19 +29,23 @@ export default class extends Component {
     };
   }
 
+  onClick = (inEvent) => {
+    NxOfflineSw.update();
+    this.props.onChange({
+      target: { value: false }
+    });
+  };
+
   render() {
-    const { className, hasUpdate, value, hidden, ...props } = this.props;
+    const { className, value, text, hidden, ...props } = this.props;
     return (
-      hasUpdate && (
+      value && (
         <div
           className={classNames(CLASS_NAME, className)}
           hidden={this.state.hidden}
           {...props}>
-          <a
-            onClick={() => {
-              NxOfflineSw.update();
-            }}>
-            <span className={`${CLASS_NAME}__text`}>{value}</span>
+          <a onClick={this.onClick}>
+            <span className={`${CLASS_NAME}__text`}>{text}</span>
           </a>
           <a
             className={`${CLASS_NAME}__close`}

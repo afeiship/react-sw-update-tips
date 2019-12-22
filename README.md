@@ -9,8 +9,9 @@ npm install -S @feizheng/react-sw-update-tips
 | property  | type    | description |
 | --------- | ------- | ----------- |
 | className | -       | -           |
+| text      | Boolean | -           |
 | value     | Boolean | -           |
-| hasUpdate | Boolean | -           |
+| onChange  | Boolean | -           |
 
 ## usage
 1. import css
