@@ -16,7 +16,7 @@ class App extends React.Component {
   installSw() {
     NxOfflineSw.install({
       onUpdateReady: function() {
-        nx.$memory = { hasUpdate: true };
+        // this.setState({ hasUpdate: false });
         console.log('SW Event:', 'onUpdateReady');
       }
     });
@@ -25,7 +25,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app-container">
-        <ReactSwUpdateTips hasUpdate={this.state.hasUpdate} />
+        <ReactSwUpdateTips value={this.state.hasUpdate} />
       </div>
     );
   }

@@ -19,7 +19,9 @@ export default class extends Component {
     text: '↺ 有新版本更新啦，点击刷新',
     hidden: false,
     value: false,
-    onChange: noop
+    onChange: () => {
+      NxOfflineSw.update();
+    }
   };
 
   constructor(inProps) {
@@ -30,7 +32,6 @@ export default class extends Component {
   }
 
   onClick = (inEvent) => {
-    NxOfflineSw.update();
     this.props.onChange({
       target: { value: false }
     });

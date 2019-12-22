@@ -41,7 +41,7 @@ npm install -S @feizheng/react-sw-update-tips
     installSw() {
       NxOfflineSw.install({
         onUpdateReady: function() {
-          nx.$memory = { hasUpdate: true };
+          // this.setState({ hasUpdate: false });
           console.log('SW Event:', 'onUpdateReady');
         }
       });
@@ -50,14 +50,13 @@ npm install -S @feizheng/react-sw-update-tips
     render() {
       return (
         <div className="app-container">
-          <ReactSwUpdateTips hasUpdate={this.state.hasUpdate} />
+          <ReactSwUpdateTips value={this.state.hasUpdate} />
         </div>
       );
     }
   }
 
   ReactDOM.render(<App />, document.getElementById('app'));
-
   ```
 
 ## documentation

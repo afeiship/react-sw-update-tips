@@ -1,6 +1,6 @@
 {
   "name": "@feizheng/react-sw-update-tips",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Update tips for service-worker.",
   "main": "dist/index.js",
   "scripts": {
