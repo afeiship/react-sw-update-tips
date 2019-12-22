@@ -32,6 +32,7 @@ export default class extends Component {
   }
 
   onClick = (inEvent) => {
+    inEvent.preventDefault();
     this.props.onChange({
       target: { value: false }
     });

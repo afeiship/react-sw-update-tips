@@ -15,7 +15,8 @@ export default merge(baseConfig, {
     library: 'ReactSwUpdateTips'
   }),
   externals: externals.base({
-    '@feizheng/noop': '@feizheng/noop'
+    '@feizheng/noop': '@feizheng/noop',
+    '@feizheng/next-offline-sw': '@feizheng/next-offline-sw'
   }),
   plugins: [plugins.clean(), plugins.copyStyles()]
 });
