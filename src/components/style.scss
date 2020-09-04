@@ -27,5 +27,8 @@ $react-sw-update-tips-options: () !default;
 
   a {
     cursor: pointer;
+    &:active {
+      opacity: 0.8;
+    }
   }
 }

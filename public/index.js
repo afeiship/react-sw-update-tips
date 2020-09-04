@@ -1,7 +1,7 @@
-import ReactSwUpdateTips from '../src/main';
-import ReactDOM from 'react-dom';
-import React from 'react';
 import NxOfflineSw from '@feizheng/next-offline-sw';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import ReactSwUpdateTips from '../src/main';
 import './assets/style.scss';
 
 class App extends React.Component {
@@ -15,7 +15,7 @@ class App extends React.Component {
 
   installSw() {
     NxOfflineSw.install({
-      onUpdateReady: function() {
+      onUpdateReady: function () {
         // this.setState({ hasUpdate: false });
         console.log('SW Event:', 'onUpdateReady');
       }

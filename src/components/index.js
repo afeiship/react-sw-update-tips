@@ -1,18 +1,34 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import PropTypes from 'prop-types';
-import classNames from 'classnames';
-import noop from '@feizheng/noop';
 import NxOfflineSw from '@feizheng/next-offline-sw';
-import objectAssign from 'object-assign';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
+import React, { Component } from 'react';
 
 const CLASS_NAME = 'react-sw-update-tips';
 
-export default class extends Component {
+export default class ReactSwUpdateTips extends Component {
+  static displayName = CLASS_NAME;
+  static version = '__VERSION__';
   static propTypes = {
+    /**
+     * The extended className for component.
+     */
     className: PropTypes.string,
-    text: PropTypes.string,
-    value: PropTypes.bool
+    /**
+     * Tips text.
+     */
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+    /**
+     * Default value.
+     */
+    value: PropTypes.bool,
+    /**
+     * The html hidden status.
+     */
+    hidden: PropTypes.bool,
+    /**
+     * The change handler.
+     */
+    onChange: PropTypes.func
   };
 
   static defaultProps = {
