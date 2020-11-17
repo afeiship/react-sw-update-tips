@@ -19,7 +19,9 @@
   },
   "keywords": [
     "react",
-    "component"
+    "sw",
+    "tips",
+    "service-worker"
   ],
   "author": "afei",
   "license": "MIT",
