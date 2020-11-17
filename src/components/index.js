@@ -1,4 +1,4 @@
-import NxOfflineSw from '@feizheng/next-offline-sw';
+import NxOfflineSw from '@jswork/next-offline-sw';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';

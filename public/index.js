@@ -1,4 +1,4 @@
-import NxOfflineSw from '@feizheng/next-offline-sw';
+import NxOfflineSw from '@jswork/next-offline-sw';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactSwUpdateTips from '../src/main';
